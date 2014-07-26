@@ -42,11 +42,11 @@ if [ ! -f ${BUILD_DIR}/system.properties ]; then
 fi
 
 # install JDK 
-javaVersion=$(detect_java_version ${BUILD_DIR})
-echo -n "-----> Installing OpenJDK ${javaVersion}..."
-install_java ${BUILD_DIR} ${javaVersion}
-jdk_overlay ${BUILD_DIR}
-echo " done"
+#javaVersion=$(detect_java_version ${BUILD_DIR})
+#echo -n "-----> Installing OpenJDK ${javaVersion}..."
+#install_java ${BUILD_DIR} ${javaVersion}
+#jdk_overlay ${BUILD_DIR}
+#echo " done"
 
 # change to cache dir to install maven
 cd $CACHE_DIR
@@ -54,12 +54,12 @@ cd $CACHE_DIR
 # install maven with base repository
 MAVEN_URL="http://heroku-jvm-langpack-java.s3.amazonaws.com/maven.central.tar.gz"
 
-if [ ! -d .maven ]; then
-  echo -n "-----> Installing Maven 3.0.3..."
-  curl --silent --max-time 60 --location $MAVEN_URL | tar xz
-  chmod +x .maven/bin/mvn
-  echo " done"
-fi
+#if [ ! -d .maven ]; then
+#  echo -n "-----> Installing Maven 3.0.3..."
+#  curl --silent --max-time 60 --location $MAVEN_URL | tar xz
+#  chmod +x .maven/bin/mvn
+#  echo " done"
+#fi
 
 # change to build dir to run maven
 cd $BUILD_DIR
