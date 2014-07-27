@@ -54,12 +54,12 @@ cd $CACHE_DIR
 # install maven with base repository
 MAVEN_URL="http://heroku-jvm-langpack-java.s3.amazonaws.com/maven.central.tar.gz"
 
-#if [ ! -d .maven ]; then
-#  echo -n "-----> Installing Maven 3.0.3..."
-#  curl --silent --max-time 60 --location $MAVEN_URL | tar xz
-#  chmod +x .maven/bin/mvn
-#  echo " done"
-#fi
+if [ ! -d .maven ]; then
+  echo -n "-----> Installing Maven 3.0.3..."
+  curl --silent --max-time 60 --location $MAVEN_URL | tar xz
+  chmod +x .maven/bin/mvn
+  echo " done"
+fi
 
 # change to build dir to run maven
 cd $BUILD_DIR
